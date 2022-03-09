@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Functions: Task 3</title>
-    <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Functions: Task 3</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
 
-  <body>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
 
-    <section class="preview">
+<body>
+
+  <section class="preview">
 
 
 
-    </section>
+  </section>
 
-  </body>
-  <script>
-    const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
-    const para = document.createElement('p');
+</body>
+<script>
+  const names = ['Chris', 'Li Kang', 'Anne', 'Francesca', 'Mustafa', 'Tina', 'Bert', 'Jada']
+  const para = document.createElement('p');
 
-    // Add your code here
+  // Add your code here
+  let chosenName;
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 
-    // Don't edit the code below here!
+  const random = getRandomInt(0, 7);
 
-    const section = document.querySelector('section');
+  function chooseName() {
+    chosenName = names[random];
+  }
+  chooseName();
+  para.textContent = `The name ${chosenName} is chosen`;
+  // Don't edit the code below here!
 
-    section.appendChild(para);
-  </script>
+  const section = document.querySelector('section');
+
+  section.appendChild(para);
+</script>
 
 </html>
