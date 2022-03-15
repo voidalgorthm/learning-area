@@ -19,9 +19,17 @@
     const admitted = document.querySelector('.admitted');
     const refused = document.querySelector('.refused');
 
+    for(const person of people){
+      if(person ==='Phil' || person === 'Lola'){
+        refused.textContent += person + ', ';
+      } else {
+        admitted.textContent += person + ', ';
+      }
+    }
+
     let i = 0;
 
-    do {
+   /* do {
       if(people[i] === 'Phil' || people[i] === 'Lola') {
         refused.textContent += people[i] + ', ';
       } else {
@@ -29,7 +37,7 @@
       }
 
       i++;
-    } while(i < people.length);
+    } while(i < people.length); */
 
     refused.textContent = refused.textContent.slice(0,refused.textContent.length-2) + '.';
     admitted.textContent = admitted.textContent.slice(0,admitted.textContent.length-2) + '.';
