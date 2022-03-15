@@ -28,27 +28,47 @@
 </head>
 
 <body>
-  <h2>Live Output:</h2>
+  <h2>Countdown:</h2>
   <div style="height: 410px; overflow: auto;">
-  <p class="output"></p>
+    <button id="countbtn">Start</button>
+    <button id="resetbtn">Reset</button>
+    <p id="output"></p>
   </div>
   <script>
-    let i = 10;
 
-    while (i >= 0) {
-      const para = document.createElement('p');
-      if (i === 10) {
-        para.textContent = 'Countdown ' + i;
-      } else if (i === 0) {
-        para.textContent = 'Blast off!';
-      } else {
-        para.textContent = i;
+    const output = document.querySelector('#output');
+
+    async function countdown() {
+        const timer = ms => new Promise(res => setTimeout(res, ms));
+        for (let i = 10; i >= 0; i--) {
+          if (i === 0) {
+            alert('Boom!!!');
+            output.textContent = 'Blast off!';
+          } else {
+            const display = `${i}`;
+            output.textContent = `${display}`;
+            await timer(1000);
+          }
+
+        }
       }
 
-      document.body.appendChild(para);
-
-      i--;
+    function start() {
+      i = 10;
+      countdown();
     }
+
+    function reset() {
+      output.textContent = '';
+    }
+
+    const countBtn = document.querySelector('#countbtn');
+    const resetBtn = document.querySelector('#resetbtn');
+
+    countBtn.addEventListener('click', start());
+    resetBtn.addEventListener('click', reset());
+
+
 
   </script>
 
