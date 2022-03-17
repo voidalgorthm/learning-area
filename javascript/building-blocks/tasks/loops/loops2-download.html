@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Loops: Task 2</title>
-    <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Loops: Task 2</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
 
-  <body>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
 
-    <section class="preview">
+<body>
 
+  <section class="preview">
+    <label for="search">Search for:</label>
+    <input type="text" name="search" id="search">
+    <button>Search</button>
+  </section>
 
+</body>
+<script>
+  const input = document.querySelector('input');
+  const button = document.querySelector('button');
 
-    </section>
+  const para = document.createElement('p');
 
-  </body>
-  <script>
-    const name = 'Mustafa';
-    const para = document.createElement('p');
+  const phonebook = [
+    { name: 'Chris', number: '1549' },
+    { name: 'Li Kang', number: '9634' },
+    { name: 'Anne', number: '9065' },
+    { name: 'Francesca', number: '3001' },
+    { name: 'Mustafa', number: '6888' },
+    { name: 'Tina', number: '4312' },
+    { name: 'Bert', number: '7780' },
+    { name: 'Jada', number: '2282' },
+  ]
 
-    const phonebook = [
-      { name : 'Chris', number : '1549' },
-      { name : 'Li Kang', number : '9634' },
-      { name : 'Anne', number : '9065' },
-      { name : 'Francesca', number : '3001' },
-      { name : 'Mustafa', number : '6888' },
-      { name : 'Tina', number : '4312' },
-      { name : 'Bert', number : '7780' },
-      { name : 'Jada', number : '2282' },
-    ]
+  button.addEventListener('click', () => {
+    const name = input.value;
+    input.value = '';
 
-    // Add your code here
     for (let i = 0; i < phonebook.length; i++) {
-      if(name.toLowerCase() === phonebook[i].name.toLowerCase()){
+      if (name.toLowerCase() === phonebook[i].name.toLowerCase()) {
         para.textContent = `${phonebook[i].name}: ${phonebook[i].number}`;
         break;
+      } else if(name === '') {
+        para.textContent = 'Invalid blank input.';
+      } else {
+        para.textContent = 'Contact not found!'
       }
     }
-    // Don't edit the code below here!
+
     const section = document.querySelector('section');
     section.appendChild(para);
-  </script>
+    input.focus();
+  });
+
+
+</script>
 
 </html>
