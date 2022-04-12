@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Object basics: Task 2</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
 
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Object basics: Task 2</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  <body>
-    <section class="preview">
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="preview">
 
 
 
-    </section>
+  </section>
 
-    <textarea class="playable playable-js" style="height: 220px;">
+  <textarea class="playable playable-js" style="height: 220px;">
 let bandInfo;
 
 // Put your code here
+band = {
+  name: 'Linkin Park',
+  nationality: 'American',
+  genre: 'Alternative Rock',
+  members: '6',
+  formed: '1996',
+  split: false,
+  albums: {
+    one: {
+    name: 'Hybrid Theory',
+    released: 2000,},
+    two: {
+    name: 'Meteorra',
+    released: 2003,},
+  }
+}
 
+bandInfo = `${band['name']} is an ${band['nationality']} band known for their music in ${band['genre']}.
+The band consists of ${band['members']} that is formed in ${band['formed']}. After a hiatus because of tragedy in 2017, 
+the band still continues today in minimal capacity and maybe for a foreseable future. 
+Two of their albums are well known: ${band['albums']['one']['name']}: ${band['albums']['one']['released']} 
+${band['albums']['two']['name']}: ${band['albums']['two']['released']}`;
 
 // Don't edit the code below here
 
@@ -36,10 +58,11 @@ para1.textContent = bandInfo;
 section.appendChild(para1);
     </textarea>
 
-    <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
-    </div>
-  </body>
-  <script class="editable"></script>
-  <script src="../playable.js"></script>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset" />
+  </div>
+</body>
+<script class="editable"></script>
+<script src="../playable.js"></script>
+
 </html>
