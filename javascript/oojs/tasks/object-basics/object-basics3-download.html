@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Object basics: Task 3</title>
-    <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
 
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-
-  <body>
-
-    <section class="preview">
-
-
-
-    </section>
-
-  </body>
-  <script>
-    const cat = {
-      name : 'Bertie',
-      breed : 'Cymric',
-      color : 'white',
-      greeting: function() {
-        console.log('Meow!');
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Object basics: Task 3</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
     }
-  </script>
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+  <section class="preview">
+
+
+
+  </section>
+
+</body>
+<script>
+  const preview = document.querySelector('.preview');
+  const para = document.createElement('p');
+  
+  const cat = {
+    name: 'Bertie',
+    breed: 'Cymric',
+    color: 'white',
+    greeting: function () {
+      console.log(`Hello, said ${cat.name} the ${cat.breed}.`);
+    }
+  }
+
+  function Cat(name, breed, color) {
+    this.name = name;
+    this.breed = breed;
+    this.color = color;
+    this.greeting = function () {
+      console.log(`Hello, said ${name} the ${color} ${breed}.`);
+    }
+  }
+
+  const garfield = new Cat('Garfield', 'Tabby', 'Orange');
+  garfield.name;
+
+  para.textContent = cat.greeting();
+  para.textContent = garfield.greeting();
+  preview.appendChild(para);
+</script>
 
 </html>
