@@ -1,13 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Table template</title>
-    <link href="minimal-table.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1>Table template</h1>
 
+<head>
+  <meta charset="utf-8">
+  <title>Table template</title>
+  <link href="minimal-table.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      background-color: lightslategrey;
+    }
+  </style>
+</head>
 
-  </body>
+<body>
+  <h1>Planets</h1>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col style="border: 2px solid black">
+    </colgroup>
+    <caption>Data about the planets of our solar system (Planetary facts taken from <a
+        href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
+    <thead>
+      <tr>
+        <th colspan="2">Classification</th>
+        <th id="name" scope="col">Name</th>
+        <th id="mass" scope="col">Mass (10<sup>24</sup>kg)</th>
+        <th id="diameter" scope="col">Diameter (km)</th>
+        <th id="density" scope="col">Density (kg/m<sup>3</sup>)</th>
+        <th id="gravity" scope="col">Gravity (m/s<sup>2</sup>)</th>
+        <th id="day" scope="col">Length of day (hours)</th>
+        <th id="distance" scope="col">Distance from Sun (10<sup>6</sup>km)</th>
+        <th id="temperature" scope="col">Mean temperature (°C)</th>
+        <th id="moons" scope="col">Number of moons</th>
+        <th id="notes" scope="col">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="rowgroup" rowspan="4" id="terrestrial">Terrestrial</th>
+        <th scope="row" id="iron">Iron Planet</th>
+        <th scope="row" id="mercury">Mercury</th>
+        <td headers="mass terrestrial iron mercury">0.330</td>
+        <td headers="diameter terrestrial iron mercury">4,879</td>
+        <td headers="density terrestrial iron mercury">5427</td>
+        <td headers="gravity terrestrial iron mercury">3.7</td>
+        <td headers="day terrestrial iron mercury">4222.6</td>
+        <td headers="distance terrestrial iron mercury">57.9</td>
+        <td headers="temperature terrestrial iron mercury">167</td>
+        <td headers="moons terrestrial iron mercury">0</td>
+        <td headers="notes terrestrial iron mercury">Closest to the Sun</td>
+      </tr>
+      <tr>
+        <th scope="row" id="silicate" rowspan="3">Silicate Planet</th>
+        <th scope="row" id="venus">Venus</th>
+        <td headers="mass terrestrial silicate venus">4.87</td>
+        <td headers="diameter terrestrial silicate venus">12,104</td>
+        <td headers="density terrestrial silicate venus">5243</td>
+        <td headers="gravity terrestrial silicate venus">8.9</td>
+        <td headers="day terrestrial silicate venus">2802.0</td>
+        <td headers="distance terrestrial silicate venus">108.2</td>
+        <td headers="temperature terrestrial silicate venus">464</td>
+        <td headers="moon terrestrial silicate venus">0</td>
+        <td headers="notes terrestrial silicate venus">Hottest surface in the Solar System</td>
+      </tr>
+      <tr>
+        <th scope="row" id="earth">Earth</th>
+        <td headers="mass terrestrial silicate earth">5.97</td>
+        <td headers="diameter terrestrial silicate earth">12,756</td>
+        <td headers="density terrestrial silicate earth">5514</td>
+        <td headers="gravity terrestrial silicate earth">9.8</td>
+        <td headers="day terrestrial silicate earth">24.0</td>
+        <td headers="distance terrestrial silicate earth">149.6</td>
+        <td headers="temperature terrestrial silicate earth">15</td>
+        <td headers="moon terrestrial silicate earth">1</td>
+        <td headers="notes terrestrial silicate earth">Our world</td>
+      </tr>
+      <tr>
+        <th scope="row" id="mars">Mars</th>
+        <td headers="mass terrestrial silicate mars">0.642</td>
+        <td headers="diameter terrestrial silicate mars">6,792</td>
+        <td headers="density terrestrial silicate mars">3933</td>
+        <td headers="gravity terrestrial silicate mars">3.7</td>
+        <td headers="day terrestrial silicate mars">24.7</td>
+        <td headers="distance terrestrial silicate mars">227.9</td>
+        <td headers="temperature terrestrial silicate mars">-65</td>
+        <td headers="moon terrestrial silicate mars">2</td>
+        <td headers="notes terrestrial silicate mars">The red planet</td>
+      </tr>
+      <tr>
+        <th scope="rowgroup" rowspan="5" id="jovian">Jovian</th>
+        <th scope="row" rowspan="2" id="gasgiants">Gas Giants</th>
+        <th scope="row" id="jupiter">Jupiter</th>
+        <td headers="mass jovian gasgiants jupiter">1898</td>
+        <td headers="diameter jovian gasgiants jupiter">142,984</td>
+        <td headers="density jovian gasgiants jupiter">1326</td>
+        <td headers="gravity jovian gasgiants jupiter">23.1</td>
+        <td headers="day jovian gasgiants jupiter">9.9</td>
+        <td headers="distance jovian gasgiants jupiter">778.6</td>
+        <td headers="temperature jovian gasgiants jupiter">-110</td>
+        <td headers="moon jovian gasgiants jupiter">67</td>
+        <td headers="notes jovian gasgiants jupiter">The largest planet</td>
+      </tr>
+      <tr>
+        <th scope="row" id="saturn">Saturn</th>
+        <td headers="mass jovian gasgiants saturn">568</td>
+        <td headers="diameter jovian gasgiants saturn">120,536</td>
+        <td headers="density jovian gasgiants saturn">687</td>
+        <td headers="gravity jovian gasgiants saturn">9.0</td>
+        <td headers="day jovian gasgiants saturn">10.7</td>
+        <td headers="distance jovian gasgiants saturn">1433.5</td>
+        <td headers="temperature jovian gasgiants saturn">-140</td>
+        <td headers="moon jovian gasgiants saturn">62</td>
+        <td headers="notes jovian gasgiants saturn">Planet with visible rings</td>
+      </tr>
+      <tr>
+        <th scope="row" rowspan="2" id="icegiants">Ice Giants</th>
+        <th scope="row" id="uranus">Uranus</th>
+        <td headers="mass jovian icegiants uranus">86.8</td>
+        <td headers="diameter jovian icegiants uranus">51,118</td>
+        <td headers="density jovian icegiants uranus">1271</td>
+        <td headers="gravity jovian icegiants uranus">8.7</td>
+        <td headers="day jovian icegiants uranus">17.2</td>
+        <td headers="distance jovian icegiants uranus">2872.5</td>
+        <td headers="temperature jovian icegiants uranus">-195</td>
+        <td headers="moon jovian icegiants uranus">27</td>
+        <td headers="notes jovian icegiants uranus">White ice giant</td>
+      </tr>
+      <tr>
+        <th scope="row" id="neptune">Neptune</th>
+        <td headers="mass jovian icegiants neptune">102</td>
+        <td headers="diameter jovian icegiants neptune">49,528</td>
+        <td headers="density jovian icegiants neptune">1638</td>
+        <td headers="gravity jovian icegiants neptune">11.0</td>
+        <td headers="day jovian icegiants neptune">16.1</td>
+        <td headers="distance jovian icegiants neptune">4495.1</td>
+        <td headers="temperature jovian icegiants neptune">-200</td>
+        <td headers="moon jovian icegiants neptune">14</td>
+        <td headers="notes jovian icegiants neptune">Blue ice giant</td>
+      </tr>
+      <tr>
+        <th scope="row" id="dwarf">Dwarf Planet</th>
+        <th scope="row" id="pluto">Pluto</th>
+        <td headers="mass jovian dwarf pluto">0.0146</td>
+        <td headers="diameter jovian dwarf pluto">2,370</td>
+        <td headers="density jovian dwarf pluto">2095</td>
+        <td headers="gravity jovian dwarf pluto">0.7</td>
+        <td headers="day jovian dwarf pluto">153.3</td>
+        <td headers="distance jovian dwarf pluto">5906.4</td>
+        <td headers="temperature jovian dwarf pluto">-225</td>
+        <td headers="moon jovian dwarf pluto">5</td>
+        <td headers="notes jovian dwarf pluto">Declassified as a planet in 2006, but this <a
+            href="http://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-system/16578959/">remains
+            controversial</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
 </html>
